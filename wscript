@@ -613,9 +613,9 @@ def build_drivers(bld):
     alsa_src = [
         'common/memops.c',
         'linux/alsa/JackAlsaDriver.cpp',
-        'linux/alsa/alsa_rawmidi.c',
-        'linux/alsa/alsa_seqmidi.c',
-        'linux/alsa/alsa_midi_jackmp.cpp',
+        #'linux/alsa/alsa_rawmidi.c',
+        #'linux/alsa/alsa_seqmidi.c',
+        #'linux/alsa/alsa_midi_jackmp.cpp',
         'linux/alsa/generic_hw.c',
         'linux/alsa/hdsp.c',
         'linux/alsa/alsa_driver.c',
@@ -719,11 +719,11 @@ def build_drivers(bld):
             target = 'alsa',
             source = alsa_src,
             use = ['ALSA'])
-        create_driver_obj(
-            bld,
-            target = 'alsarawmidi',
-            source = alsarawmidi_src,
-            use = ['ALSA'])
+        #create_driver_obj(
+        #    bld,
+        #    target = 'alsarawmidi',
+        #    source = alsarawmidi_src,
+        #    use = ['ALSA'])
 
     if bld.env['BUILD_DRIVER_FFADO']:
         create_driver_obj(
